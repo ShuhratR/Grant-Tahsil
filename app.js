@@ -142,7 +142,7 @@ const dictionaries = {
     helpPick: "Помогите подобрать",
     maxCities: "Можно выбрать максимум 5 городов.",
     ageError: "Возраст должен быть от 16 лет.",
-    success: "Заявка подготовлена. Сейчас откроется WhatsApp.",
+    success: "Заявка сохранена. Сейчас откроется WhatsApp для отправки копии сообщения.",
     waHello: "Здравствуйте! Я посетил сайт Grant Tahsil и хочу получить консультацию по поступлению в Китай.",
     waLead: "Новая заявка с сайта Grant Tahsil",
     waProgram: "Программа",
@@ -294,7 +294,7 @@ const dictionaries = {
     helpPick: "Барои интихоб кӯмак кунед",
     maxCities: "Ҳадди аксар 5 шаҳр интихоб кардан мумкин аст.",
     ageError: "Синну сол бояд аз 16 боло бошад.",
-    success: "Дархост омода шуд. Ҳоло WhatsApp кушода мешавад.",
+    success: "Дархост нигоҳ дошта шуд. Ҳоло WhatsApp барои фиристодани нусхаи паём кушода мешавад.",
     waHello: "Салом! Ман аз сомонаи Grant Tahsil ворид шудам ва мехоҳам оид ба таҳсил дар Чин машварат гирам.",
     waLead: "Дархости нав аз сомонаи Grant Tahsil",
     waProgram: "Барнома",
@@ -337,15 +337,15 @@ const faqs = {
   ]
 };
 
-const galleryImages = [
-  "assets/gallery/dorm-01.webp",
-  "assets/gallery/dorm-02.webp",
-  "assets/gallery/dorm-03.webp",
-  "assets/gallery/dorm-04.webp",
-  "assets/gallery/dorm-05.webp",
-  "assets/gallery/dorm-06.webp",
-  "assets/gallery/dorm-07.webp",
-  "assets/gallery/dorm-08.webp"
+const galleryItems = [
+  { src: "assets/gallery/dorm-02.webp", ru: "Комната студента", tj: "Ҳуҷраи донишҷӯ" },
+  { src: "assets/gallery/dorm-01.webp", ru: "Комната с мини-кухней", tj: "Ҳуҷра бо ошхонаи хурд" },
+  { src: "assets/gallery/dorm-03.webp", ru: "Общая комната", tj: "Ҳуҷраи умумӣ" },
+  { src: "assets/gallery/dorm-05.webp", ru: "Общежитие на несколько мест", tj: "Хобгоҳи чанднафара" },
+  { src: "assets/gallery/dorm-08.webp", ru: "Кровать и рабочая зона", tj: "Кати хоб ва ҷои корӣ" },
+  { src: "assets/gallery/dorm-04.webp", ru: "Рабочее место и шкаф", tj: "Ҷои корӣ ва ҷевон" },
+  { src: "assets/gallery/dorm-07.webp", ru: "Общая кухня", tj: "Ошхонаи умумӣ" },
+  { src: "assets/gallery/dorm-06.webp", ru: "Зона для учёбы и отдыха", tj: "Минтақаи таҳсил ва истироҳат" }
 ];
 
 let currentLang = localStorage.getItem("grantTahsilLang") || "ru";
@@ -430,15 +430,13 @@ function renderDynamicBlocks() {
 
 function renderGallery() {
   const gallery = document.querySelector("#gallery");
-  const captions = currentLang === "tj"
-    ? ["Минтақаи таҳсил", "Ошхона", "Хобгоҳ", "Ҷойи корӣ", "Ҳуҷраи донишҷӯ", "Кампус", "Муҳити зиндагӣ", "Ҳуҷраи равшан"]
-    : ["Учебная зона", "Кухня кампуса", "Хобгоҳ", "Рабочее место", "Комната студента", "Кампус", "Среда проживания", "Светлая комната"];
-  const loopImages = [...galleryImages, ...galleryImages, ...galleryImages];
-  gallery.innerHTML = loopImages.map((src, index) => {
-    const duplicate = index < galleryImages.length || index >= galleryImages.length * 2;
-    return `<figure class="gallery-card tilt-card" data-gallery-index="${index % galleryImages.length}" ${duplicate ? 'aria-hidden="true"' : ""}>
-      <img src="${src}" alt="${duplicate ? "" : `${t("galleryAlt")} ${(index % galleryImages.length) + 1}`}" loading="lazy">
-      <figcaption><span>${captions[index % captions.length]}</span><small>Grant Tahsil</small></figcaption>
+  const loopItems = [...galleryItems, ...galleryItems, ...galleryItems];
+  gallery.innerHTML = loopItems.map((item, index) => {
+    const duplicate = index < galleryItems.length || index >= galleryItems.length * 2;
+    const caption = item[currentLang] || item.ru;
+    return `<figure class="gallery-card tilt-card" data-gallery-index="${index % galleryItems.length}" ${duplicate ? 'aria-hidden="true"' : ""}>
+      <img src="${item.src}" alt="${duplicate ? "" : `${t("galleryAlt")}: ${caption}`}" loading="lazy">
+      <figcaption><span>${caption}</span><small>Grant Tahsil</small></figcaption>
     </figure>`;
   }).join("");
   setupInfiniteGallery(true);
@@ -446,6 +444,16 @@ function renderGallery() {
 
 function updateWhatsappLinks() {
   document.querySelectorAll("[data-require-application]").forEach((link) => link.setAttribute("href", "#apply"));
+}
+
+function buildWhatsappUrl(message) {
+  const text = encodeURIComponent(message);
+  const mobileDevice = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+    || (navigator.maxTouchPoints > 1 && window.innerWidth < 900);
+
+  return mobileDevice
+    ? `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${text}`
+    : `https://web.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${text}`;
 }
 
 function focusApplicationForm() {
@@ -704,7 +712,7 @@ function setupForm() {
     if (shouldOpenWhatsapp) {
       formNote.textContent = fallbackMode ? t("fallbackNotice") : t("success");
       formNote.classList.toggle("warning", fallbackMode);
-      const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`;
+      const whatsappUrl = buildWhatsappUrl(lines.join("\n"));
       if (pendingWhatsappWindow) pendingWhatsappWindow.location.href = whatsappUrl;
       else window.location.href = whatsappUrl;
     }
