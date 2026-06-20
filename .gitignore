@@ -1,0 +1,4 @@
+node_modules/
+.env
+backup-before-3d/
+npm-debug.log*
