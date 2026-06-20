@@ -19,21 +19,18 @@ const dictionaries = {
     citySelected: "Город выбран",
     brandTag: "Поступление в Китай",
     navPrograms: "Программы",
-    navCities: "Города",
-    navSteps: "Этапы",
+    navDorms: "Проживание",
     navApply: "Заявка",
     whatsapp: "Заполнить анкету",
-    heroEyebrow: "С 2018 года • Душанбе",
+    heroEyebrow: "Работаем с 2018 года • Душанбе",
     heroTitle: "Ваш путь к образованию в Китае начинается здесь",
     heroText: "Grant Tahsil помогает подобрать программу и университет, подготовить заявку и пройти основные этапы поступления в Китай.",
-    heroPrimary: "Подобрать программу",
-    heroSecondary: "Анкета для консультации",
-    heroGuideEyebrow: "Как начать",
-    heroGuideTitle: "Бесплатная консультация после анкеты",
-    heroGuideOne: "Заполните короткую анкету",
-    heroGuideTwo: "Мы изучим вашу цель",
-    heroGuideThree: "Получите консультацию",
-    heroGuideButton: "Перейти к анкете →",
+    heroPrimary: "Программы обучения",
+    heroSecondary: "Получить консультацию",
+    heroGuideEyebrow: "Консультация",
+    heroGuideTitle: "Обсудим вашу цель обучения",
+    heroGuideText: "Оставьте данные — менеджер поможет с программой и ответит на вопросы.",
+    heroGuideButton: "Получить консультацию →",
     trustOne: "Языковые курсы",
     trustTwo: "Колледж",
     trustThree: "Бакалавриат",
@@ -55,12 +52,6 @@ const dictionaries = {
     aboutEyebrow: "О компании",
     aboutTitle: "Grant Tahsil — ваш проводник к образованию в Китае",
     aboutText: "Компания помогает абитуриентам выбрать подходящую программу, подготовить документы и пройти основные этапы поступления на языковые программы, колледж, бакалавриат и магистратуру.",
-    featureOneTitle: "Индивидуальный подбор",
-    featureOneText: "Учитываем образование, цель, желаемую специальность и город.",
-    featureTwoTitle: "Документы и заявка",
-    featureTwoText: "Помогаем подготовить пакет документов и подать заявку.",
-    featureThreeTitle: "Сопровождение",
-    featureThreeText: "Информируем о следующих этапах до начала обучения.",
     programsEyebrow: "Направления",
     programsTitle: "Программы обучения",
     programLanguage: "Языковые курсы",
@@ -119,6 +110,7 @@ const dictionaries = {
     selectProgram: "Выберите программу",
     fieldCities: "Выберите города Китая",
     fieldCitiesHint: "Можно выбрать до 5 городов.",
+    cityDropdownPlaceholder: "Открыть список городов",
     fieldChinese: "Знаете ли вы китайский язык?",
     selectAnswer: "Выберите ответ",
     answerNo: "Нет",
@@ -126,7 +118,6 @@ const dictionaries = {
     fieldHsk: "Ваш уровень китайского языка",
     hskNoCert: "Изучаю, но сертификата HSK нет",
     submitApplication: "Отправить заявку",
-    formNote: "Минимальный возраст для консультации: 16 лет.",
     consentText: "Я согласен на обработку указанных данных для связи по моей заявке.",
     privacyTitle: "Как используются данные",
     privacyText: "Данные используются только для обработки заявки и связи с вами. Мы не публикуем их и не передаём посторонним организациям без необходимости для выбранной услуги.",
@@ -141,7 +132,7 @@ const dictionaries = {
     mobileWhatsapp: "Анкета",
     helpPick: "Помогите подобрать",
     maxCities: "Можно выбрать максимум 5 городов.",
-    ageError: "Возраст должен быть от 16 лет.",
+    ageError: "Укажите возраст от 1 до 150 лет.",
     success: "Заявка сохранена. Сейчас откроется WhatsApp для отправки копии сообщения.",
     waHello: "Здравствуйте! Я посетил сайт Grant Tahsil и хочу получить консультацию по поступлению в Китай.",
     waLead: "Новая заявка с сайта Grant Tahsil",
@@ -171,21 +162,18 @@ const dictionaries = {
     citySelected: "Шаҳр интихоб шуд",
     brandTag: "Таҳсил дар Чин",
     navPrograms: "Барномаҳо",
-    navCities: "Шаҳрҳо",
-    navSteps: "Марҳилаҳо",
+    navDorms: "Иқомат",
     navApply: "Дархост",
     whatsapp: "Пур кардани анкета",
-    heroEyebrow: "Аз соли 2018 • Душанбе",
+    heroEyebrow: "Аз соли 2018 кор мекунем • Душанбе",
     heroTitle: "Роҳи шумо ба таҳсил дар Чин аз ҳамин ҷо оғоз мешавад",
     heroText: "Grant Tahsil барои интихоби барнома ва донишгоҳ, омода намудани дархост ва гузаштани марҳилаҳои асосии дохилшавӣ ба Чин кӯмак мерасонад.",
-    heroPrimary: "Интихоби барнома",
-    heroSecondary: "Анкета барои машварат",
-    heroGuideEyebrow: "Чӣ тавр оғоз кардан",
-    heroGuideTitle: "Машварати ройгон пас аз анкета",
-    heroGuideOne: "Анкетаи кӯтоҳро пур кунед",
-    heroGuideTwo: "Мо ҳадафи шуморо меомӯзем",
-    heroGuideThree: "Машварат гиред",
-    heroGuideButton: "Гузаштан ба анкета →",
+    heroPrimary: "Барномаҳои таҳсил",
+    heroSecondary: "Гирифтани машварат",
+    heroGuideEyebrow: "Машварат",
+    heroGuideTitle: "Ҳадафи таҳсили шуморо баррасӣ мекунем",
+    heroGuideText: "Маълумотро гузоред — менеджер дар интихоби барнома кӯмак карда, ба саволҳо ҷавоб медиҳад.",
+    heroGuideButton: "Гирифтани машварат →",
     trustOne: "Курсҳои забонӣ",
     trustTwo: "Коллеҷ",
     trustThree: "Бакалавриат",
@@ -207,12 +195,6 @@ const dictionaries = {
     aboutEyebrow: "Дар бораи ширкат",
     aboutTitle: "Grant Tahsil — роҳнамои шумо ба таҳсил дар Чин",
     aboutText: "Ширкат ба довталабон барои интихоби барномаи мувофиқ, омодасозии ҳуҷҷатҳо ва гузаштани марҳилаҳои асосии дохилшавӣ ба курсҳои забонӣ, коллеҷ, бакалавриат ва магистратура кӯмак мекунад.",
-    featureOneTitle: "Интихоби инфиродӣ",
-    featureOneText: "Таҳсилот, мақсад, ихтисоси дилхоҳ ва шаҳр ба назар гирифта мешавад.",
-    featureTwoTitle: "Ҳуҷҷатҳо ва дархост",
-    featureTwoText: "Барои омода намудани ҳуҷҷатҳо ва пешниҳоди дархост кӯмак мекунем.",
-    featureThreeTitle: "Ҳамроҳӣ",
-    featureThreeText: "Дар бораи марҳилаҳои навбатӣ то оғози таҳсил маълумот медиҳем.",
     programsEyebrow: "Самтҳо",
     programsTitle: "Барномаҳои таҳсил",
     programLanguage: "Курсҳои забонӣ",
@@ -271,6 +253,7 @@ const dictionaries = {
     selectProgram: "Барномаро интихоб намоед",
     fieldCities: "Шаҳрҳои Чинро интихоб намоед",
     fieldCitiesHint: "То 5 шаҳр интихоб кардан мумкин аст.",
+    cityDropdownPlaceholder: "Кушодани рӯйхати шаҳрҳо",
     fieldChinese: "Оё забони чиниро медонед?",
     selectAnswer: "Ҷавобро интихоб намоед",
     answerNo: "Не",
@@ -278,7 +261,6 @@ const dictionaries = {
     fieldHsk: "Сатҳи дониши забони чинии шумо",
     hskNoCert: "Меомӯзам, вале сертификати HSK надорам",
     submitApplication: "Дархост пешниҳод кардан",
-    formNote: "Синни ҳадди ақал барои машварат: 16 сол.",
     consentText: "Ман ба коркарди маълумоти нишондодашуда барои тамос аз рӯи дархостам розӣ ҳастам.",
     privacyTitle: "Маълумот чӣ гуна истифода мешавад",
     privacyText: "Маълумот танҳо барои коркарди дархост ва тамос бо шумо истифода мешавад. Мо онро нашр намекунем ва бе зарурати хидмати интихобшуда ба шахсони бегона намедиҳем.",
@@ -293,7 +275,7 @@ const dictionaries = {
     mobileWhatsapp: "Анкета",
     helpPick: "Барои интихоб кӯмак кунед",
     maxCities: "Ҳадди аксар 5 шаҳр интихоб кардан мумкин аст.",
-    ageError: "Синну сол бояд аз 16 боло бошад.",
+    ageError: "Синну солро аз 1 то 150 нишон диҳед.",
     success: "Дархост нигоҳ дошта шуд. Ҳоло WhatsApp барои фиристодани нусхаи паём кушода мешавад.",
     waHello: "Салом! Ман аз сомонаи Grant Tahsil ворид шудам ва мехоҳам оид ба таҳсил дар Чин машварат гирам.",
     waLead: "Дархости нав аз сомонаи Grant Tahsil",
@@ -324,13 +306,11 @@ const steps = {
 
 const faqs = {
   ru: [
-    ["С какого возраста можно обратиться?", "Минимальный возраст для консультации и подбора программы — 16 лет."],
     ["Вы работаете только с Китаем?", "Да, Grant Tahsil специализируется на поступлении в учебные заведения Китая."],
     ["Нужно ли знать китайский язык?", "Не всегда. Есть языковые программы, а уровень языка уточняется при подборе."],
     ["Показываете ли вы университеты на сайте?", "Пока нет. Университеты подбираются индивидуально после консультации."]
   ],
   tj: [
-    ["Аз чандсолагӣ муроҷиат кардан мумкин аст?", "Синни ҳадди ақал барои машварат ва интихоби барнома 16 сол мебошад."],
     ["Шумо танҳо бо Чин кор мекунед?", "Ҳа, Grant Tahsil ба дохилшавӣ ба муассисаҳои таълимии Чин ихтисос дорад."],
     ["Оё донистани забони чинӣ ҳатмист?", "На ҳамеша. Барномаҳои забонӣ мавҷуданд ва сатҳи забон ҳангоми интихоб муайян мешавад."],
     ["Оё донишгоҳҳо дар сайт нишон дода мешаванд?", "Айни ҳол не. Донишгоҳҳо пас аз машварат ба таври инфиродӣ интихоб мешаванд."]
@@ -395,19 +375,6 @@ function renderDynamicBlocks() {
   const specialtyItems = specialties[currentLang].map((item) => `<span>${item}</span>`).join("");
   specialtyList.innerHTML = `<div class="specialty-group">${specialtyItems}</div><div class="specialty-group" aria-hidden="true">${specialtyItems}</div>`;
 
-  const cityOrbit = document.querySelector("#cityOrbit");
-  const selectedCityValues = new Set([...document.querySelectorAll('input[name="cities"]:checked')].map((input) => input.value));
-  cityOrbit.innerHTML = cities[currentLang].slice(0, 12).map((city, index) => {
-    const value = cities.ru[index] || city;
-    const selected = selectedCityValues.has(value);
-    return `<button class="city-card ${selected ? "selected" : ""}" type="button" data-city-value="${value}" aria-pressed="${selected}" style="--delay:${index * 70}ms">
-      <span class="city-index">0${(index % 4) + 1}</span>
-      <strong>${city}</strong>
-      <em>${index % 3 === 0 ? t("cityEducation") : index % 3 === 1 ? t("cityCampus") : t("cityStudent")}</em>
-      <span class="city-action">${selected ? `✓ ${t("citySelected")}` : `＋ ${t("cityChoose")}`}</span>
-    </button>`;
-  }).join("");
-
   const cityOptions = document.querySelector("#cityOptions");
   const storedChecked = new Set([...cityOptions.querySelectorAll("input:checked")].map((input) => input.value));
   cityOptions.innerHTML = [
@@ -416,11 +383,7 @@ function renderDynamicBlocks() {
   ].map(({ label, value }) => (
     `<label><input type="checkbox" name="cities" value="${value}" ${value === "Помогите подобрать" ? "data-help-pick" : ""} ${storedChecked.has(value) ? "checked" : ""}><span>${label}</span></label>`
   )).join("");
-
-  const timeline = document.querySelector("#timeline");
-  timeline.innerHTML = steps[currentLang].map((step, index) => (
-    `<article><span>${index + 1}</span><strong>${step}</strong></article>`
-  )).join("");
+  updateCitySelectionSummary();
 
   const faqList = document.querySelector("#faqList");
   faqList.innerHTML = faqs[currentLang].map(([q, a], index) => (
@@ -467,31 +430,10 @@ function focusApplicationForm() {
   }, 650);
 }
 
-function selectCityInApplication(cityValue) {
-  const cityInput = [...document.querySelectorAll('#cityOptions input[name="cities"]')]
-    .find((input) => input.value === cityValue);
-  if (!cityInput) return;
-  const checked = [...document.querySelectorAll('input[name="cities"]:checked')];
-  const formNote = document.querySelector("#formNote");
-  if (!cityInput.checked && checked.length >= 5) {
-    formNote.textContent = t("maxCities");
-    formNote.classList.add("warning");
-    return;
-  }
-  cityInput.checked = !cityInput.checked;
-  cityInput.dispatchEvent(new Event("change", { bubbles: true }));
-  syncCityCards();
-}
-
-function syncCityCards() {
-  const selected = new Set([...document.querySelectorAll('input[name="cities"]:checked')].map((input) => input.value));
-  document.querySelectorAll(".city-card").forEach((button) => {
-    const isSelected = selected.has(button.dataset.cityValue);
-    button.classList.toggle("selected", isSelected);
-    button.setAttribute("aria-pressed", String(isSelected));
-    const action = button.querySelector(".city-action");
-    if (action) action.textContent = isSelected ? `✓ ${t("citySelected")}` : `＋ ${t("cityChoose")}`;
-  });
+function updateCitySelectionSummary() {
+  const count = document.querySelectorAll('input[name="cities"]:checked').length;
+  const counter = document.querySelector("#citySelectionCount");
+  if (counter) counter.textContent = `${count} / 5`;
 }
 
 function setupInfiniteGallery(resetPosition = false) {
@@ -590,6 +532,14 @@ function setupForm() {
   const knowsChinese = document.querySelector("#knowsChinese");
   const hskField = document.querySelector("#hskField");
   const formNote = document.querySelector("#formNote");
+  const ageInput = form.elements.age;
+
+  ageInput.addEventListener("input", () => {
+    if (ageInput.value === "") return;
+    const age = Number(ageInput.value);
+    if (age < 1) ageInput.value = "";
+    if (age > 150) ageInput.value = "150";
+  });
 
   knowsChinese.addEventListener("change", () => {
     hskField.classList.toggle("hidden", knowsChinese.value !== "yes");
@@ -616,17 +566,17 @@ function setupForm() {
       formNote.textContent = t("maxCities");
       formNote.classList.add("warning");
     } else {
-      formNote.textContent = t("formNote");
+      formNote.textContent = "";
       formNote.classList.remove("warning");
     }
-    syncCityCards();
+    updateCitySelectionSummary();
   });
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const data = new FormData(form);
     const age = Number(data.get("age"));
-    if (!age || age < 16) {
+    if (!Number.isInteger(age) || age < 1 || age > 150) {
       formNote.textContent = t("ageError");
       formNote.classList.add("warning");
       return;
@@ -767,18 +717,6 @@ function setupInteractions() {
     });
   });
 
-  document.querySelectorAll("[data-fill-program]").forEach((button) => {
-    button.setAttribute("aria-pressed", "false");
-    button.addEventListener("click", () => {
-      document.querySelectorAll("[data-fill-program]").forEach((item) => {
-        item.classList.toggle("selected", item === button);
-        item.setAttribute("aria-pressed", String(item === button));
-      });
-      document.querySelector('select[name="program"]').value = button.dataset.fillProgram;
-      document.querySelector("#apply").scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-  });
-
   document.querySelector(".gallery-arrow.next").addEventListener("click", () => {
     moveGallery(1);
   });
@@ -789,12 +727,6 @@ function setupInteractions() {
   document.querySelector("#gallery").addEventListener("scroll", () => {
     window.requestAnimationFrame(keepGalleryInfinite);
   }, { passive: true });
-
-  document.querySelector("#cityOrbit").addEventListener("click", (event) => {
-    const button = event.target.closest(".city-card");
-    if (!button) return;
-    selectCityInApplication(button.dataset.cityValue);
-  });
 
   const updateHeader = () => {
     document.querySelector(".site-header").classList.toggle("is-scrolled", window.scrollY > 80);

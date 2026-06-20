@@ -26,7 +26,7 @@ function json(response, status, payload) {
 
 function validApplication(body) {
   return body && typeof body.name === "string" && body.name.trim().length >= 2 && body.name.length <= 80
-    && Number.isInteger(Number(body.age)) && Number(body.age) >= 16 && Number(body.age) <= 80
+    && Number.isInteger(Number(body.age)) && Number(body.age) >= 1 && Number(body.age) <= 150
     && typeof body.phone === "string" && body.phone.length >= 7 && body.phone.length <= 30
     && typeof body.program === "string" && body.program.length <= 80
     && Array.isArray(body.cities) && body.cities.length <= 5;

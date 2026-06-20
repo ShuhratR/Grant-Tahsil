@@ -18,7 +18,7 @@ function doPost(event) {
       return jsonResponse({ ok: false, error: "spreadsheet_id_missing" });
     }
 
-    if (!data.name || !data.phone || !data.program || Number(data.age) < 16) {
+    if (!data.name || !data.phone || !data.program || Number(data.age) < 1 || Number(data.age) > 150) {
       return jsonResponse({ ok: false, error: "invalid_application" });
     }
 
