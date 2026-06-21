@@ -31,8 +31,8 @@ function validApplication(body) {
     && body.name.trim().length >= 2
     && body.name.length <= 80
     && Number.isInteger(Number(body.age))
-    && Number(body.age) >= 16
-    && Number(body.age) <= 80
+    && Number(body.age) >= 1
+    && Number(body.age) <= 150
     && typeof body.phone === "string"
     && body.phone.length >= 7
     && body.phone.length <= 30
