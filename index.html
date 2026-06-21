@@ -6,10 +6,12 @@
   <meta name="theme-color" content="#020817" />
   <title>Grant Tahsil | Образование в Китае</title>
   <meta name="description" content="Grant Tahsil помогает выбрать программу, подготовить документы и пройти этапы поступления на обучение в Китай." />
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
+  <link rel="apple-touch-icon" href="assets/logo.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260621-mobile-specialties" />
+  <link rel="stylesheet" href="style.css?v=20260621-simplified-mobile" />
 </head>
 <body>
   <div class="ambient ambient-one"></div>
@@ -50,12 +52,6 @@
         <div class="hero-actions">
           <a class="btn primary" href="#programs" data-i18n="heroPrimary">Программы обучения</a>
           <a class="btn ghost" href="#apply" data-require-application data-i18n="heroSecondary">Получить консультацию</a>
-        </div>
-        <div class="trust-row">
-          <span data-i18n="trustOne">Языковые курсы</span>
-          <span data-i18n="trustTwo">Колледж</span>
-          <span data-i18n="trustThree">Бакалавриат</span>
-          <span data-i18n="trustFour">Магистратура</span>
         </div>
       </div>
 
@@ -118,7 +114,7 @@
         <div class="gallery infinite-gallery" id="gallery" aria-label="Галерея проживания"></div>
         <button class="gallery-arrow next" type="button" aria-label="Вперёд">›</button>
       </div>
-      <p class="gallery-hint" data-i18n="galleryHint">На телефоне проведите по фотографиям в сторону</p>
+      <p class="gallery-hint" data-i18n="galleryHint">Карусель движется автоматически; на телефоне фотографии можно листать вручную.</p>
     </section>
 
     <section class="section services">
@@ -148,14 +144,6 @@
       </div>
     </section>
 
-    <section class="section faq">
-      <div class="section-head reveal">
-        <p class="eyebrow" data-i18n="faqEyebrow">FAQ</p>
-        <h2 data-i18n="faqTitle">Частые вопросы</h2>
-      </div>
-      <div class="faq-list reveal" id="faqList"></div>
-    </section>
-
     <section class="section application" id="apply">
       <div class="application-copy reveal">
         <p class="eyebrow" data-i18n="applyEyebrow">Заявка</p>
@@ -163,20 +151,21 @@
         <p data-i18n="applyText">После отправки откроется WhatsApp с готовым сообщением. Проверьте текст и нажмите отправить.</p>
       </div>
       <form class="apply-form reveal" id="applyForm">
-        <label>
+        <p class="required-note"><strong data-i18n="requiredLabel">Обязательно:</strong> <span data-i18n="requiredHint">заполните поля со звёздочкой.</span></p>
+        <label class="required-field">
           <span data-i18n="fieldName">Имя</span>
           <input name="name" type="text" autocomplete="name" minlength="2" maxlength="80" required />
         </label>
-        <label>
+        <label class="required-field">
           <span data-i18n="fieldAge">Возраст</span>
           <input name="age" type="number" min="1" max="150" step="1" inputmode="numeric" required />
         </label>
-        <label>
+        <label class="required-field">
           <span data-i18n="fieldPhone">Номер телефона</span>
           <input name="phone" type="tel" autocomplete="tel" minlength="7" maxlength="30" required />
         </label>
-        <label>
-          <span data-i18n="fieldProgram">Желаемая программа</span>
+        <label class="required-field">
+          <span data-i18n="fieldProgram">Программы</span>
           <select name="program" required>
             <option value="" data-i18n="selectProgram">Выберите программу</option>
             <option value="language" data-i18n="programLanguage">Языковые курсы</option>
@@ -195,18 +184,20 @@
           </details>
         </fieldset>
 
-        <label>
-          <span data-i18n="fieldChinese">Знаете ли вы китайский язык?</span>
-          <select name="knowsChinese" id="knowsChinese" required>
-            <option value="" data-i18n="selectAnswer">Выберите ответ</option>
-            <option value="no" data-i18n="answerNo">Нет</option>
-            <option value="yes" data-i18n="answerYes">Да</option>
+        <label class="required-field">
+          <span data-i18n="fieldKnownLanguage">Какой иностранный язык вы знаете?</span>
+          <select name="knownLanguage" id="knownLanguage" required>
+            <option value="" data-i18n="selectLanguage">Выберите язык</option>
+            <option value="none" data-i18n="languageNone">Пока не знаю</option>
+            <option value="chinese" data-i18n="languageChinese">Китайский</option>
+            <option value="english" data-i18n="languageEnglish">Английский</option>
+            <option value="both" data-i18n="languageBoth">Китайский и английский</option>
           </select>
         </label>
 
-        <label class="hsk-field hidden" id="hskField">
+        <label class="hsk-field required-field hidden" id="hskField">
           <span data-i18n="fieldHsk">Ваш уровень китайского языка</span>
-          <select name="hsk">
+          <select name="hsk" disabled>
             <option value="no-certificate" data-i18n="hskNoCert">Изучаю, но сертификата HSK нет</option>
             <option>HSK 1</option>
             <option>HSK 2</option>
@@ -214,6 +205,20 @@
             <option>HSK 4</option>
             <option>HSK 5</option>
             <option>HSK 6</option>
+          </select>
+        </label>
+
+        <label class="english-field required-field hidden" id="englishField">
+          <span data-i18n="fieldEnglishLevel">Уровень английского языка</span>
+          <select name="englishLevel" disabled>
+            <option value="" data-i18n="selectEnglishLevel">Выберите уровень</option>
+            <option value="A1" data-i18n="englishA1">Начальный — A1</option>
+            <option value="A2" data-i18n="englishA2">Базовый — A2</option>
+            <option value="B1" data-i18n="englishB1">Средний — B1</option>
+            <option value="B2" data-i18n="englishB2">Выше среднего — B2</option>
+            <option value="C1-C2" data-i18n="englishAdvanced">Продвинутый — C1–C2</option>
+            <option value="IELTS">IELTS</option>
+            <option value="TOEFL">TOEFL</option>
           </select>
         </label>
 
@@ -252,16 +257,15 @@
           <svg aria-hidden="true" viewBox="0 0 24 24"><path class="icon-fill" d="M21.5 3.4 18.4 19c-.2 1.1-.8 1.4-1.7.9l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 9-8.1c.4-.3-.1-.5-.6-.2L6.2 12.9l-4.8-1.5c-1-.3-1.1-1 .2-1.5L20.3 2.7c.9-.3 1.6.2 1.2.7Z"/></svg>
           <span>Telegram</span>
         </a>
+        <a class="footer-social" href="https://www.facebook.com/share/18npk2KMNR/?mibextid=wwXIfr" target="_blank" rel="noreferrer" aria-label="Facebook Grant Tahsil">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path class="icon-fill" d="M13.7 21v-8h2.8l.4-3.1h-3.2v-2c0-.9.3-1.5 1.6-1.5H17V3.6c-.8-.1-1.6-.2-2.4-.2-2.4 0-4.1 1.5-4.1 4.2v2.3H7.8V13h2.7v8h3.2Z"/></svg>
+          <span>Facebook</span>
+        </a>
       </div>
-      <address data-i18n="address">Душанбе, проспект Н. Махсум, 1</address>
+      <address data-i18n="address">Душанбе, проспект Н. Махсум, 16А</address>
     </div>
   </footer>
 
-  <div class="mobile-cta">
-    <a href="#apply" data-i18n="mobileApply">Заявка</a>
-    <a href="#apply" data-require-application data-i18n="mobileWhatsapp">Анкета</a>
-  </div>
-
-  <script src="app.js?v=20260621-whatsapp-app"></script>
+  <script src="app.js?v=20260621-language-levels"></script>
 </body>
 </html>
