@@ -3003,26 +3003,26 @@ p,
 
 @media (max-width: 680px) {
   .specialty-viewport {
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    scroll-snap-type: x proximity;
-    -webkit-overflow-scrolling: touch;
-    -webkit-mask-image: none;
-    mask-image: none;
+    overflow: hidden;
+    touch-action: pan-y;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
   }
 
   .specialty-track {
-    animation: none;
+    animation: specialties-loop 34s linear infinite;
   }
 
   .specialty-group span {
-    scroll-snap-align: start;
     font-size: 13px;
   }
 
-  .specialty-group[aria-hidden="true"],
   .specialty-toggle {
     display: none;
+  }
+
+  .specialty-marquee:not(.is-paused):not(.is-offscreen) .specialty-track {
+    animation-play-state: running;
   }
 
   .section-cta {
