@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "992007884423";
+const WHATSAPP_NUMBER = "992889908833";
 
 const dictionaries = {
   ru: {
@@ -125,9 +125,6 @@ const dictionaries = {
     footerText: "Поступление на обучение в Китай с профессиональным сопровождением.",
     contacts: "Контакты",
     address: "Душанбе, проспект Н. Махсум, 1",
-    whatsappConsult: "Заполнить анкету",
-    footerActionTitle: "Бесплатная консультация после анкеты",
-    footerActionText: "Заполните данные — мы изучим вашу цель и подскажем следующий шаг.",
     mobileApply: "Заявка",
     mobileWhatsapp: "Анкета",
     helpPick: "Помогите подобрать",
@@ -268,9 +265,6 @@ const dictionaries = {
     footerText: "Дохилшавӣ ба таҳсил дар Чин бо ҳамроҳии касбӣ.",
     contacts: "Тамос",
     address: "Душанбе, проспекти Н. Махсум, 1",
-    whatsappConsult: "Пур кардани анкета",
-    footerActionTitle: "Машварати ройгон пас аз анкета",
-    footerActionText: "Маълумотро пур кунед — мо ҳадафи шуморо меомӯзем ва қадами навбатиро пешниҳод мекунем.",
     mobileApply: "Дархост",
     mobileWhatsapp: "Анкета",
     helpPick: "Барои интихоб кӯмак кунед",

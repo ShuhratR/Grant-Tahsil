@@ -41,7 +41,7 @@ npm run check:local
 - `GOOGLE_APPS_SCRIPT_SECRET` — общий секрет из Script Properties (`API_SECRET`).
 - `PORT` — порт сервера, по умолчанию `4173`.
 
-Не добавляйте service-account private key во frontend или репозиторий. При пустом `GOOGLE_APPS_SCRIPT_URL` API возвращает явный fallback-режим, после чего заявка открывается в WhatsApp на номере `992007884423`.
+Не добавляйте service-account private key во frontend или репозиторий. При пустом `GOOGLE_APPS_SCRIPT_URL` API возвращает явный fallback-режим, после чего заявка открывается в WhatsApp на номере `992889908833`.
 
 ## Деплой на Vercel
 
