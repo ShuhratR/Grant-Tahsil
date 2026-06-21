@@ -403,13 +403,16 @@ function updateWhatsappLinks() {
   document.querySelectorAll("[data-require-application]").forEach((link) => link.setAttribute("href", "#apply"));
 }
 
+function isMobileWhatsappDevice() {
+  return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+    || (navigator.maxTouchPoints > 1 && window.innerWidth < 900);
+}
+
 function buildWhatsappUrl(message) {
   const text = encodeURIComponent(message);
-  const mobileDevice = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
-    || (navigator.maxTouchPoints > 1 && window.innerWidth < 900);
 
-  return mobileDevice
-    ? `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${text}`
+  return isMobileWhatsappDevice()
+    ? `whatsapp://send?phone=${WHATSAPP_NUMBER}&text=${text}`
     : `https://web.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${text}`;
 }
 
@@ -605,7 +608,8 @@ function setupForm() {
       language: currentLang
     };
 
-    const pendingWhatsappWindow = window.open("", "_blank");
+    const mobileWhatsapp = isMobileWhatsappDevice();
+    const pendingWhatsappWindow = mobileWhatsapp ? null : window.open("", "_blank");
 
     const submitButton = form.querySelector('[type="submit"]');
     const originalButtonText = submitButton.textContent;
@@ -657,7 +661,8 @@ function setupForm() {
       formNote.textContent = fallbackMode ? t("fallbackNotice") : t("success");
       formNote.classList.toggle("warning", fallbackMode);
       const whatsappUrl = buildWhatsappUrl(lines.join("\n"));
-      if (pendingWhatsappWindow) pendingWhatsappWindow.location.href = whatsappUrl;
+      if (mobileWhatsapp) window.location.href = whatsappUrl;
+      else if (pendingWhatsappWindow) pendingWhatsappWindow.location.href = whatsappUrl;
       else window.location.href = whatsappUrl;
     }
     submitButton.disabled = false;
