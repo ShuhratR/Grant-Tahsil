@@ -31,10 +31,6 @@ const dictionaries = {
     heroGuideTitle: "Обсудим вашу цель обучения",
     heroGuideText: "Оставьте данные — менеджер поможет с программой и ответит на вопросы.",
     heroGuideButton: "Получить консультацию →",
-    trustOne: "Языковые курсы",
-    trustTwo: "Колледж",
-    trustThree: "Бакалавриат",
-    trustFour: "Магистратура",
     heroStatTitle: "Китай",
     heroStatText: "программы для разных уровней образования",
     heroCardProgram: "Program Match",
@@ -95,8 +91,6 @@ const dictionaries = {
     extraThree: "Встреча студента в Китае",
     stepsEyebrow: "Путь студента",
     stepsTitle: "Этапы поступления",
-    faqEyebrow: "FAQ",
-    faqTitle: "Частые вопросы",
     applyEyebrow: "Заявка",
     applyTitle: "Оставьте данные — менеджер свяжется с вами",
     applyText: "После отправки откроется WhatsApp с готовым сообщением. Проверьте текст и нажмите отправить.",
@@ -106,7 +100,9 @@ const dictionaries = {
     fieldName: "Имя",
     fieldAge: "Возраст",
     fieldPhone: "Номер телефона",
-    fieldProgram: "Желаемая программа",
+    fieldProgram: "Программы",
+    requiredLabel: "Обязательно:",
+    requiredHint: "заполните поля со звёздочкой.",
     selectProgram: "Выберите программу",
     fieldCities: "Выберите города Китая",
     fieldCitiesHint: "Можно выбрать до 5 городов.",
@@ -125,8 +121,6 @@ const dictionaries = {
     footerText: "Поступление на обучение в Китай с профессиональным сопровождением.",
     contacts: "Контакты",
     address: "Душанбе, проспект Н. Махсум, 1",
-    mobileApply: "Заявка",
-    mobileWhatsapp: "Анкета",
     helpPick: "Помогите подобрать",
     maxCities: "Можно выбрать максимум 5 городов.",
     ageError: "Укажите возраст от 1 до 150 лет.",
@@ -171,10 +165,6 @@ const dictionaries = {
     heroGuideTitle: "Ҳадафи таҳсили шуморо баррасӣ мекунем",
     heroGuideText: "Маълумотро гузоред — менеджер дар интихоби барнома кӯмак карда, ба саволҳо ҷавоб медиҳад.",
     heroGuideButton: "Гирифтани машварат →",
-    trustOne: "Курсҳои забонӣ",
-    trustTwo: "Коллеҷ",
-    trustThree: "Бакалавриат",
-    trustFour: "Магистратура",
     heroStatTitle: "Чин",
     heroStatText: "барномаҳо барои сатҳҳои гуногуни таҳсил",
     heroCardProgram: "Интихоби барнома",
@@ -235,8 +225,6 @@ const dictionaries = {
     extraThree: "Пешвозгирии донишҷӯ дар Чин",
     stepsEyebrow: "Роҳи донишҷӯ",
     stepsTitle: "Марҳилаҳои дохилшавӣ",
-    faqEyebrow: "Саволҳо",
-    faqTitle: "Саволҳои маъмул",
     applyEyebrow: "Дархост",
     applyTitle: "Маълумотро гузоред — менеджер бо шумо тамос мегирад",
     applyText: "Пас аз фиристодан WhatsApp бо паёми омода кушода мешавад. Матнро санҷед ва фиристед.",
@@ -246,7 +234,9 @@ const dictionaries = {
     fieldName: "Ном",
     fieldAge: "Синну сол",
     fieldPhone: "Рақами телефон",
-    fieldProgram: "Барномаи дилхоҳ",
+    fieldProgram: "Барномаҳо",
+    requiredLabel: "Ҳатмӣ:",
+    requiredHint: "майдонҳои ситорачадорро пур кунед.",
     selectProgram: "Барномаро интихоб намоед",
     fieldCities: "Шаҳрҳои Чинро интихоб намоед",
     fieldCitiesHint: "То 5 шаҳр интихоб кардан мумкин аст.",
@@ -265,8 +255,6 @@ const dictionaries = {
     footerText: "Дохилшавӣ ба таҳсил дар Чин бо ҳамроҳии касбӣ.",
     contacts: "Тамос",
     address: "Душанбе, проспекти Н. Махсум, 1",
-    mobileApply: "Дархост",
-    mobileWhatsapp: "Анкета",
     helpPick: "Барои интихоб кӯмак кунед",
     maxCities: "Ҳадди аксар 5 шаҳр интихоб кардан мумкин аст.",
     ageError: "Синну солро аз 1 то 150 нишон диҳед.",
@@ -296,19 +284,6 @@ const cities = {
 const steps = {
   ru: ["Консультация", "Подбор программы", "Документы", "Заявка", "Приглашение", "Виза", "Китай"],
   tj: ["Машварат", "Интихоби барнома", "Ҳуҷҷатҳо", "Дархост", "Даъватнома", "Раводид", "Чин"]
-};
-
-const faqs = {
-  ru: [
-    ["Вы работаете только с Китаем?", "Да, Grant Tahsil специализируется на поступлении в учебные заведения Китая."],
-    ["Нужно ли знать китайский язык?", "Не всегда. Есть языковые программы, а уровень языка уточняется при подборе."],
-    ["Показываете ли вы университеты на сайте?", "Пока нет. Университеты подбираются индивидуально после консультации."]
-  ],
-  tj: [
-    ["Шумо танҳо бо Чин кор мекунед?", "Ҳа, Grant Tahsil ба дохилшавӣ ба муассисаҳои таълимии Чин ихтисос дорад."],
-    ["Оё донистани забони чинӣ ҳатмист?", "На ҳамеша. Барномаҳои забонӣ мавҷуданд ва сатҳи забон ҳангоми интихоб муайян мешавад."],
-    ["Оё донишгоҳҳо дар сайт нишон дода мешаванд?", "Айни ҳол не. Донишгоҳҳо пас аз машварат ба таври инфиродӣ интихоб мешаванд."]
-  ]
 };
 
 const galleryItems = [
@@ -379,10 +354,6 @@ function renderDynamicBlocks() {
   )).join("");
   updateCitySelectionSummary();
 
-  const faqList = document.querySelector("#faqList");
-  faqList.innerHTML = faqs[currentLang].map(([q, a], index) => (
-    `<details ${index === 0 ? "open" : ""}><summary>${q}</summary><p>${a}</p></details>`
-  )).join("");
 }
 
 function renderGallery() {

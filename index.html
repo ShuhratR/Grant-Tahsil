@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260621-mobile-specialties" />
+  <link rel="stylesheet" href="style.css?v=20260621-simplified-mobile" />
 </head>
 <body>
   <div class="ambient ambient-one"></div>
@@ -52,12 +52,6 @@
         <div class="hero-actions">
           <a class="btn primary" href="#programs" data-i18n="heroPrimary">Программы обучения</a>
           <a class="btn ghost" href="#apply" data-require-application data-i18n="heroSecondary">Получить консультацию</a>
-        </div>
-        <div class="trust-row">
-          <span data-i18n="trustOne">Языковые курсы</span>
-          <span data-i18n="trustTwo">Колледж</span>
-          <span data-i18n="trustThree">Бакалавриат</span>
-          <span data-i18n="trustFour">Магистратура</span>
         </div>
       </div>
 
@@ -150,14 +144,6 @@
       </div>
     </section>
 
-    <section class="section faq">
-      <div class="section-head reveal">
-        <p class="eyebrow" data-i18n="faqEyebrow">FAQ</p>
-        <h2 data-i18n="faqTitle">Частые вопросы</h2>
-      </div>
-      <div class="faq-list reveal" id="faqList"></div>
-    </section>
-
     <section class="section application" id="apply">
       <div class="application-copy reveal">
         <p class="eyebrow" data-i18n="applyEyebrow">Заявка</p>
@@ -165,20 +151,21 @@
         <p data-i18n="applyText">После отправки откроется WhatsApp с готовым сообщением. Проверьте текст и нажмите отправить.</p>
       </div>
       <form class="apply-form reveal" id="applyForm">
-        <label>
+        <p class="required-note"><strong data-i18n="requiredLabel">Обязательно:</strong> <span data-i18n="requiredHint">заполните поля со звёздочкой.</span></p>
+        <label class="required-field">
           <span data-i18n="fieldName">Имя</span>
           <input name="name" type="text" autocomplete="name" minlength="2" maxlength="80" required />
         </label>
-        <label>
+        <label class="required-field">
           <span data-i18n="fieldAge">Возраст</span>
           <input name="age" type="number" min="1" max="150" step="1" inputmode="numeric" required />
         </label>
-        <label>
+        <label class="required-field">
           <span data-i18n="fieldPhone">Номер телефона</span>
           <input name="phone" type="tel" autocomplete="tel" minlength="7" maxlength="30" required />
         </label>
-        <label>
-          <span data-i18n="fieldProgram">Желаемая программа</span>
+        <label class="required-field">
+          <span data-i18n="fieldProgram">Программы</span>
           <select name="program" required>
             <option value="" data-i18n="selectProgram">Выберите программу</option>
             <option value="language" data-i18n="programLanguage">Языковые курсы</option>
@@ -197,7 +184,7 @@
           </details>
         </fieldset>
 
-        <label>
+        <label class="required-field">
           <span data-i18n="fieldChinese">Знаете ли вы китайский язык?</span>
           <select name="knowsChinese" id="knowsChinese" required>
             <option value="" data-i18n="selectAnswer">Выберите ответ</option>
@@ -259,11 +246,6 @@
     </div>
   </footer>
 
-  <div class="mobile-cta">
-    <a href="#apply" data-i18n="mobileApply">Заявка</a>
-    <a href="#apply" data-require-application data-i18n="mobileWhatsapp">Анкета</a>
-  </div>
-
-  <script src="app.js?v=20260621-whatsapp-app"></script>
+  <script src="app.js?v=20260621-simplified-mobile"></script>
 </body>
 </html>
