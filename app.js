@@ -458,7 +458,7 @@ function startGalleryAutoScroll() {
   window.clearInterval(galleryAutoTimer);
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduceMotion || document.hidden || !galleryIsVisible || galleryIsInteracting) return;
-  galleryAutoTimer = window.setInterval(() => moveGallery(1), 12000);
+  galleryAutoTimer = window.setInterval(() => moveGallery(1), 10000);
 }
 
 function stopGalleryAutoScroll() {
