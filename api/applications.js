@@ -39,6 +39,11 @@ function validApplication(body) {
     && typeof body.program === "string"
     && body.program.trim().length >= 1
     && body.program.length <= 80
+    && ["none", "chinese", "english", "both"].includes(body.knownLanguage)
+    && typeof body.hsk === "string"
+    && body.hsk.length <= 32
+    && typeof body.englishLevel === "string"
+    && body.englishLevel.length <= 32
     && Array.isArray(body.cities)
     && body.cities.length <= 5;
 }

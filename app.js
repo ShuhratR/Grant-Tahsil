@@ -5,7 +5,7 @@ const dictionaries = {
     pageTitle: "Grant Tahsil | Образование в Китае",
     pageDescription: "Подбор программ обучения в Китае, подготовка документов и сопровождение поступления с Grant Tahsil.",
     galleryAlt: "Вариант студенческого проживания",
-    galleryHint: "На телефоне проведите по фотографиям в сторону",
+    galleryHint: "Карусель движется автоматически; на телефоне фотографии можно листать вручную.",
     sending: "Отправляем заявку…",
     saveError: "Не удалось сохранить заявку. Проверьте соединение и попробуйте ещё раз.",
     wrongServer: "Сайт открыт через Live Server без API. Запустите npm start и откройте http://127.0.0.1:4173.",
@@ -107,12 +107,21 @@ const dictionaries = {
     fieldCities: "Выберите города Китая",
     fieldCitiesHint: "Можно выбрать до 5 городов.",
     cityDropdownPlaceholder: "Открыть список городов",
-    fieldChinese: "Знаете ли вы китайский язык?",
-    selectAnswer: "Выберите ответ",
-    answerNo: "Нет",
-    answerYes: "Да",
+    fieldKnownLanguage: "Какой иностранный язык вы знаете?",
+    selectLanguage: "Выберите язык",
+    languageNone: "Пока не знаю",
+    languageChinese: "Китайский",
+    languageEnglish: "Английский",
+    languageBoth: "Китайский и английский",
     fieldHsk: "Ваш уровень китайского языка",
     hskNoCert: "Изучаю, но сертификата HSK нет",
+    fieldEnglishLevel: "Уровень английского языка",
+    selectEnglishLevel: "Выберите уровень",
+    englishA1: "Начальный — A1",
+    englishA2: "Базовый — A2",
+    englishB1: "Средний — B1",
+    englishB2: "Выше среднего — B2",
+    englishAdvanced: "Продвинутый — C1–C2",
     submitApplication: "Отправить заявку",
     consentText: "Я согласен на обработку указанных данных для связи по моей заявке.",
     privacyTitle: "Как используются данные",
@@ -120,7 +129,7 @@ const dictionaries = {
     formRequiredNote: "Заполните анкету, чтобы получить бесплатную консультацию. После отправки откроется WhatsApp с готовым сообщением.",
     footerText: "Поступление на обучение в Китай с профессиональным сопровождением.",
     contacts: "Контакты",
-    address: "Душанбе, проспект Н. Махсум, 1",
+    address: "Душанбе, проспект Н. Махсум, 16А",
     helpPick: "Помогите подобрать",
     maxCities: "Можно выбрать максимум 5 городов.",
     ageError: "Укажите возраст от 1 до 150 лет.",
@@ -129,8 +138,9 @@ const dictionaries = {
     waLead: "Новая заявка с сайта Grant Tahsil",
     waProgram: "Программа",
     waCities: "Города",
-    waChinese: "Китайский язык",
-    waHsk: "Уровень",
+    waLanguages: "Иностранный язык",
+    waHsk: "Уровень HSK",
+    waEnglish: "Уровень английского",
     waName: "Имя",
     waAge: "Возраст",
     waPhone: "Телефон"
@@ -139,7 +149,7 @@ const dictionaries = {
     pageTitle: "Grant Tahsil | Таҳсил дар Чин",
     pageDescription: "Интихоби барномаҳои таҳсил дар Чин, омодасозии ҳуҷҷатҳо ва ҳамроҳии дохилшавӣ бо Grant Tahsil.",
     galleryAlt: "Намунаи иқомати донишҷӯён",
-    galleryHint: "Дар телефон аксҳоро ба паҳлӯ ҳаракат диҳед",
+    galleryHint: "Карусел худкор ҳаракат мекунад; дар телефон аксҳоро дастӣ ҳам лист кардан мумкин аст.",
     sending: "Дархост фиристода мешавад…",
     saveError: "Дархост нигоҳ дошта нашуд. Пайвастшавиро санҷида, аз нав кӯшиш кунед.",
     wrongServer: "Сайт тавассути Live Server бе API кушода шудааст. npm start-ро иҷро карда, http://127.0.0.1:4173-ро кушоед.",
@@ -241,12 +251,21 @@ const dictionaries = {
     fieldCities: "Шаҳрҳои Чинро интихоб намоед",
     fieldCitiesHint: "То 5 шаҳр интихоб кардан мумкин аст.",
     cityDropdownPlaceholder: "Кушодани рӯйхати шаҳрҳо",
-    fieldChinese: "Оё забони чиниро медонед?",
-    selectAnswer: "Ҷавобро интихоб намоед",
-    answerNo: "Не",
-    answerYes: "Ҳа",
+    fieldKnownLanguage: "Кадом забони хориҷиро медонед?",
+    selectLanguage: "Забонро интихоб намоед",
+    languageNone: "Ҳоло намедонам",
+    languageChinese: "Забони чинӣ",
+    languageEnglish: "Забони англисӣ",
+    languageBoth: "Забони чинӣ ва англисӣ",
     fieldHsk: "Сатҳи дониши забони чинии шумо",
     hskNoCert: "Меомӯзам, вале сертификати HSK надорам",
+    fieldEnglishLevel: "Сатҳи забони англисӣ",
+    selectEnglishLevel: "Сатҳро интихоб намоед",
+    englishA1: "Ибтидоӣ — A1",
+    englishA2: "Асосӣ — A2",
+    englishB1: "Миёна — B1",
+    englishB2: "Аз миёна боло — B2",
+    englishAdvanced: "Пешрафта — C1–C2",
     submitApplication: "Дархост пешниҳод кардан",
     consentText: "Ман ба коркарди маълумоти нишондодашуда барои тамос аз рӯи дархостам розӣ ҳастам.",
     privacyTitle: "Маълумот чӣ гуна истифода мешавад",
@@ -254,7 +273,7 @@ const dictionaries = {
     formRequiredNote: "Барои гирифтани машварати ройгон анкетаро пур кунед. Пас аз фиристодан WhatsApp бо паёми омода кушода мешавад.",
     footerText: "Дохилшавӣ ба таҳсил дар Чин бо ҳамроҳии касбӣ.",
     contacts: "Тамос",
-    address: "Душанбе, проспекти Н. Махсум, 1",
+    address: "Душанбе, проспекти Н. Махсум, 16А",
     helpPick: "Барои интихоб кӯмак кунед",
     maxCities: "Ҳадди аксар 5 шаҳр интихоб кардан мумкин аст.",
     ageError: "Синну солро аз 1 то 150 нишон диҳед.",
@@ -263,8 +282,9 @@ const dictionaries = {
     waLead: "Дархости нав аз сомонаи Grant Tahsil",
     waProgram: "Барнома",
     waCities: "Шаҳрҳо",
-    waChinese: "Забони чинӣ",
-    waHsk: "Сатҳ",
+    waLanguages: "Забони хориҷӣ",
+    waHsk: "Сатҳи HSK",
+    waEnglish: "Сатҳи англисӣ",
     waName: "Ном",
     waAge: "Синну сол",
     waPhone: "Телефон"
@@ -438,7 +458,7 @@ function startGalleryAutoScroll() {
   window.clearInterval(galleryAutoTimer);
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduceMotion || document.hidden || !galleryIsVisible || galleryIsInteracting) return;
-  galleryAutoTimer = window.setInterval(() => moveGallery(1), 30000);
+  galleryAutoTimer = window.setInterval(() => moveGallery(1), 12000);
 }
 
 function stopGalleryAutoScroll() {
@@ -482,6 +502,8 @@ function setupGalleryMotion() {
   track.addEventListener("focusin", pause);
   track.addEventListener("focusout", () => window.setTimeout(resume, 0));
   gallery.addEventListener("touchstart", pause, { passive: true });
+  gallery.addEventListener("touchend", () => window.setTimeout(resume, 1200), { passive: true });
+  gallery.addEventListener("touchcancel", resume, { passive: true });
 
   new IntersectionObserver(([entry]) => {
     galleryIsVisible = entry.isIntersecting;
@@ -497,10 +519,26 @@ function setupGalleryMotion() {
 
 function setupForm() {
   const form = document.querySelector("#applyForm");
-  const knowsChinese = document.querySelector("#knowsChinese");
+  const knownLanguage = document.querySelector("#knownLanguage");
   const hskField = document.querySelector("#hskField");
+  const englishField = document.querySelector("#englishField");
   const formNote = document.querySelector("#formNote");
   const ageInput = form.elements.age;
+
+  const updateLanguageFields = () => {
+    const showHsk = ["chinese", "both"].includes(knownLanguage.value);
+    const showEnglish = ["english", "both"].includes(knownLanguage.value);
+    const hskSelect = hskField.querySelector("select");
+    const englishSelect = englishField.querySelector("select");
+
+    hskField.classList.toggle("hidden", !showHsk);
+    englishField.classList.toggle("hidden", !showEnglish);
+    hskSelect.disabled = !showHsk;
+    hskSelect.required = showHsk;
+    englishSelect.disabled = !showEnglish;
+    englishSelect.required = showEnglish;
+    if (!showEnglish) englishSelect.value = "";
+  };
 
   ageInput.addEventListener("input", () => {
     if (ageInput.value === "") return;
@@ -509,9 +547,8 @@ function setupForm() {
     if (age > 150) ageInput.value = "150";
   });
 
-  knowsChinese.addEventListener("change", () => {
-    hskField.classList.toggle("hidden", knowsChinese.value !== "yes");
-  });
+  knownLanguage.addEventListener("change", updateLanguageFields);
+  updateLanguageFields();
 
   document.querySelector("#cityOptions").addEventListener("change", (event) => {
     if (event.target.name !== "cities") return;
@@ -553,8 +590,13 @@ function setupForm() {
     const selectedCities = [...form.querySelectorAll('input[name="cities"]:checked')].map((input) => input.value);
     const programSelect = form.elements.program;
     const selectedOption = programSelect.options[programSelect.selectedIndex];
-    const knows = data.get("knowsChinese") === "yes" ? t("answerYes") : t("answerNo");
-    const hsk = data.get("knowsChinese") === "yes" ? data.get("hsk") : "-";
+    const languageSelect = form.elements.knownLanguage;
+    const knownLanguageValue = String(data.get("knownLanguage") || "");
+    const knownLanguageLabel = languageSelect.options[languageSelect.selectedIndex].textContent.trim();
+    const knowsChinese = ["chinese", "both"].includes(knownLanguageValue);
+    const knowsEnglish = ["english", "both"].includes(knownLanguageValue);
+    const hsk = knowsChinese ? data.get("hsk") : "-";
+    const englishLevel = knowsEnglish ? data.get("englishLevel") : "-";
 
     const lines = [
       t("waLead"),
@@ -564,8 +606,9 @@ function setupForm() {
       `${t("waPhone")}: ${data.get("phone")}`,
       `${t("waProgram")}: ${selectedOption.textContent.trim()}`,
       `${t("waCities")}: ${selectedCities.length ? selectedCities.join(", ") : t("helpPick")}`,
-      `${t("waChinese")}: ${knows}`,
-      `${t("waHsk")}: ${hsk}`
+      `${t("waLanguages")}: ${knownLanguageLabel}`,
+      `${t("waHsk")}: ${hsk}`,
+      `${t("waEnglish")}: ${englishLevel}`
     ];
 
     const application = {
@@ -574,8 +617,10 @@ function setupForm() {
       phone: String(data.get("phone") || "").trim().slice(0, 30),
       program: selectedOption.textContent.trim().slice(0, 80),
       cities: selectedCities.slice(0, 5),
-      knowsChinese: data.get("knowsChinese") === "yes",
+      knownLanguage: knownLanguageValue,
+      knowsChinese,
       hsk: String(hsk).slice(0, 32),
+      englishLevel: String(englishLevel).slice(0, 32),
       language: currentLang
     };
 

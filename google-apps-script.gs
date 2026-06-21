@@ -18,7 +18,7 @@ function doPost(event) {
       return jsonResponse({ ok: false, error: "spreadsheet_id_missing" });
     }
 
-    if (!data.name || !data.phone || !data.program || Number(data.age) < 1 || Number(data.age) > 150) {
+    if (!data.name || !data.phone || !data.program || !["none", "chinese", "english", "both"].includes(data.knownLanguage) || Number(data.age) < 1 || Number(data.age) > 150) {
       return jsonResponse({ ok: false, error: "invalid_application" });
     }
 
@@ -30,9 +30,12 @@ function doPost(event) {
     if (sheet.getLastRow() === 0) {
       sheet.appendRow([
         "Дата", "Имя", "Возраст", "Телефон", "Программа",
-        "Города", "Знает китайский", "HSK", "Язык сайта", "Источник"
+        "Города", "Знает китайский", "HSK", "Язык сайта", "Источник",
+        "Иностранный язык", "Уровень английского"
       ]);
       sheet.setFrozenRows(1);
+    } else {
+      sheet.getRange(1, 11, 1, 2).setValues([["Иностранный язык", "Уровень английского"]]);
     }
 
     sheet.appendRow([
@@ -45,7 +48,9 @@ function doPost(event) {
       data.knowsChinese ? "Да" : "Нет",
       safeCell(data.hsk),
       safeCell(data.language),
-      safeCell(data.source || "grant-tahsil-site")
+      safeCell(data.source || "grant-tahsil-site"),
+      safeCell(languageLabel(data.knownLanguage)),
+      safeCell(data.englishLevel)
     ]);
 
     return jsonResponse({ ok: true, stored: true });
@@ -54,6 +59,15 @@ function doPost(event) {
   } finally {
     lock.releaseLock();
   }
+}
+
+function languageLabel(value) {
+  return {
+    none: "Не знает",
+    chinese: "Китайский",
+    english: "Английский",
+    both: "Китайский и английский"
+  }[value] || value;
 }
 
 function safeCell(value) {
