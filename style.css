@@ -3320,3 +3320,19 @@ p,
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Mobile hero spans the full viewport; content keeps a safe inner gutter. */
+@media (max-width: 680px) {
+  .hero-cinematic {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+    border-radius: 0;
+  }
+
+  .hero-cinematic .hero-copy {
+    padding-left: 0;
+  }
+}
