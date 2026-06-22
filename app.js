@@ -5,7 +5,6 @@ const dictionaries = {
     pageTitle: "Grant Tahsil | Образование в Китае",
     pageDescription: "Подбор программ обучения в Китае, подготовка документов и сопровождение поступления с Grant Tahsil.",
     galleryAlt: "Вариант студенческого проживания",
-    galleryHint: "Карусель движется автоматически; на телефоне фотографии можно листать вручную.",
     sending: "Отправляем заявку…",
     saveError: "Не удалось сохранить заявку. Проверьте соединение и попробуйте ещё раз.",
     wrongServer: "Сайт открыт через Live Server без API. Запустите npm start и откройте http://127.0.0.1:4173.",
@@ -149,7 +148,6 @@ const dictionaries = {
     pageTitle: "Grant Tahsil | Таҳсил дар Чин",
     pageDescription: "Интихоби барномаҳои таҳсил дар Чин, омодасозии ҳуҷҷатҳо ва ҳамроҳии дохилшавӣ бо Grant Tahsil.",
     galleryAlt: "Намунаи иқомати донишҷӯён",
-    galleryHint: "Карусел худкор ҳаракат мекунад; дар телефон аксҳоро дастӣ ҳам лист кардан мумкин аст.",
     sending: "Дархост фиристода мешавад…",
     saveError: "Дархост нигоҳ дошта нашуд. Пайвастшавиро санҷида, аз нав кӯшиш кунед.",
     wrongServer: "Сайт тавассути Live Server бе API кушода шудааст. npm start-ро иҷро карда, http://127.0.0.1:4173-ро кушоед.",
@@ -458,7 +456,7 @@ function startGalleryAutoScroll() {
   window.clearInterval(galleryAutoTimer);
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduceMotion || document.hidden || !galleryIsVisible || galleryIsInteracting) return;
-  galleryAutoTimer = window.setInterval(() => moveGallery(1), 10000);
+  galleryAutoTimer = window.setInterval(() => moveGallery(1), 5000);
 }
 
 function stopGalleryAutoScroll() {
@@ -496,14 +494,20 @@ function setupGalleryMotion() {
     galleryIsInteracting = track.matches(":hover") || track.contains(document.activeElement);
     startGalleryAutoScroll();
   };
+  const resumeAfterTouch = () => {
+    window.setTimeout(() => {
+      galleryIsInteracting = false;
+      startGalleryAutoScroll();
+    }, 1200);
+  };
 
   track.addEventListener("pointerenter", pause);
   track.addEventListener("pointerleave", resume);
   track.addEventListener("focusin", pause);
   track.addEventListener("focusout", () => window.setTimeout(resume, 0));
   gallery.addEventListener("touchstart", pause, { passive: true });
-  gallery.addEventListener("touchend", () => window.setTimeout(resume, 1200), { passive: true });
-  gallery.addEventListener("touchcancel", resume, { passive: true });
+  gallery.addEventListener("touchend", resumeAfterTouch, { passive: true });
+  gallery.addEventListener("touchcancel", resumeAfterTouch, { passive: true });
 
   new IntersectionObserver(([entry]) => {
     galleryIsVisible = entry.isIntersecting;
